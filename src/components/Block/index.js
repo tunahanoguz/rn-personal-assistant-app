@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 function Block(props) {
   const {
     flex,
+    flexDirection,
     justifyContent,
     alignItems,
     width,
@@ -12,6 +13,7 @@ function Block(props) {
     color,
     margin,
     padding,
+    style,
     children,
   } = props;
 
@@ -107,6 +109,7 @@ function Block(props) {
 
   const blockStyle = [
     flex && { flex },
+    flexDirection && { flexDirection },
     justifyContent && { justifyContent },
     alignItems && { alignItems },
     width && { width },
@@ -114,6 +117,7 @@ function Block(props) {
     color && { backgroundColor: color },
     margin && { ...handleMargins() },
     padding && { ...handlePaddings() },
+    style,
   ];
 
   return <View style={blockStyle}>{children}</View>;
@@ -121,6 +125,7 @@ function Block(props) {
 
 Block.propTypes = {
   flex: PropTypes.number,
+  flexDirection: PropTypes.number,
   justifyContent: PropTypes.string,
   alignItems: PropTypes.string,
   width: PropTypes.number,
@@ -128,6 +133,7 @@ Block.propTypes = {
   color: PropTypes.string,
   margin: PropTypes.array,
   padding: PropTypes.array,
+  style: PropTypes.object,
 };
 
 Block.defaultProps = {
