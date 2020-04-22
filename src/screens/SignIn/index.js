@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image } from 'react-native';
 import { Block, Button, Text } from '../../components';
 import { colors } from '../../styles';
+import Input from '../../components/Input';
 
 function SignIn() {
+  const [email, setEmail] = useState('');
+
   return (
     <Block flex={1} color={colors.background}>
       <Block flex={0.8} justifyContent="center" padding={[35]}>
@@ -32,6 +35,17 @@ function SignIn() {
         <Text extraSmall color={colors.darkGrey} align="center">
           or get a link emailed to you
         </Text>
+
+        <Input
+          value={email}
+          placeholder="Work email address"
+          keyboardType="email-address"
+          autoComplete="off"
+          autoCompleteType="off"
+          autoCapitalize="none"
+          autoCorrect={false}
+          setValue={setEmail}
+        />
 
         <Button style={{ marginTop: 16 }}>
           <Text boldWeight color={colors.white}>
