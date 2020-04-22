@@ -4,10 +4,19 @@ import PropTypes from 'prop-types';
 import { colors } from '../../styles';
 
 function Button(props) {
-  const { bgColor, style, pressFunc, children } = props;
+  const {
+    bgColor,
+    borderColor,
+    isHorizontalPadding,
+    style,
+    pressFunc,
+    children,
+  } = props;
 
   const buttonStyle = [
     bgColor && { backgroundColor: bgColor },
+    borderColor && { borderWidth: 1, borderColor },
+    isHorizontalPadding && { paddingHorizontal: 16 },
     {
       flexDirection: 'row',
       justifyContent: 'center',
@@ -32,6 +41,8 @@ function Button(props) {
 
 Button.propTypes = {
   bgColor: PropTypes.string,
+  borderColor: PropTypes.string,
+  isHorizontalPadding: PropTypes.bool,
   style: PropTypes.object,
   pressFunc: PropTypes.func,
 };
