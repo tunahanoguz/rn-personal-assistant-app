@@ -125,7 +125,7 @@ function Block(props) {
 
 Block.propTypes = {
   flex: PropTypes.number,
-  flexDirection: PropTypes.number,
+  flexDirection: PropTypes.string,
   justifyContent: PropTypes.string,
   alignItems: PropTypes.string,
   width: PropTypes.number,
@@ -134,10 +134,6 @@ Block.propTypes = {
   margin: PropTypes.array,
   padding: PropTypes.array,
   style: PropTypes.object,
-};
-
-Block.defaultProps = {
-  color: PropTypes.string,
 };
 
 export default Block;
