@@ -22,19 +22,22 @@ const Typography = (props) => {
   } = props;
 
   const customStyle = [
+    normal && fonts.normal,
     extraLarge && fonts.extraLarge,
     large && fonts.large,
     lowerLarge && fonts.lowerLarge,
     medium && fonts.medium,
-    normal && fonts.normal,
     small && fonts.small,
     extraSmall && fonts.extraSmall,
+    {
+      fontFamily: 'CircularStd-Book',
+      includeFontPadding: false,
+    },
     boldWeight && { fontFamily: 'CircularStd-Bold' },
     mediumWeight && { fontFamily: 'CircularStd-Medium' },
     color && { color },
     align && { textAlign: align },
     uppercase && { textTransform: 'uppercase' },
-    { fontFamily: 'CircularStd-Book', includeFontPadding: false },
     style,
   ];
 
