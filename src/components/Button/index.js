@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import { colors } from '../../styles';
 
 function Button(props) {
-  const { bgColor, style, children } = props;
+  const { bgColor, style, pressFunc, children } = props;
 
   const buttonStyle = [
     bgColor && { backgroundColor: bgColor },
     {
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       paddingVertical: 16,
@@ -22,11 +23,17 @@ function Button(props) {
     style,
   ];
 
-  return <TouchableOpacity style={buttonStyle}>{children}</TouchableOpacity>;
+  return (
+    <TouchableOpacity style={buttonStyle} onPress={pressFunc}>
+      {children}
+    </TouchableOpacity>
+  );
 }
 
 Button.propTypes = {
   bgColor: PropTypes.string,
+  style: PropTypes.object,
+  pressFunc: PropTypes.func,
 };
 
 Button.defaultProps = {
