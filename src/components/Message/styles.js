@@ -3,6 +3,7 @@ import { colors } from '../../styles';
 
 const style = StyleSheet.create({
   message: {
+    marginVertical: 12,
     paddingVertical: 12,
     paddingHorizontal: 16,
     backgroundColor: colors.darkPurple,
@@ -14,6 +15,7 @@ const style = StyleSheet.create({
     backgroundColor: colors.white,
     borderWidth: 1,
     borderColor: colors.lightGrey,
+    borderTopStartRadius: 0,
     borderTopEndRadius: 20,
     borderBottomStartRadius: 20,
     borderBottomEndRadius: 20,
