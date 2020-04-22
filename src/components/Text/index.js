@@ -58,7 +58,7 @@ Typography.propTypes = {
   align: PropTypes.string,
   uppercase: PropTypes.bool,
   lineThrough: PropTypes.bool,
-  style: PropTypes.object,
+  style: PropTypes.any,
 };
 
 Typography.defaultProps = {
