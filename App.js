@@ -9,7 +9,7 @@ function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Introduction" headerMode="null">
         <Stack.Screen name="Introduction" component={Introduction} />
       </Stack.Navigator>
     </NavigationContainer>
