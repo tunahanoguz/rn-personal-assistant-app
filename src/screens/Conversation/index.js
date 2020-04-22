@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
-import { Block, Text } from '../../components';
+import { Block, Text, Message, Button, Input } from '../../components';
 import { colors } from '../../styles';
-import Message from '../../components/Message';
-import Button from '../../components/Button';
-import Input from '../../components/Input';
 import { messages } from '../../constants';
 
 function Conversation() {
