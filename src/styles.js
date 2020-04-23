@@ -38,4 +38,7 @@ export const fonts = {
   extraSmall: {
     fontSize: 15,
   },
+  smallest: {
+    fontSize: 12,
+  },
 };
