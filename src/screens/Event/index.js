@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, StatusBar } from 'react-native';
 import { Avatar, Block, Text, EventCard } from '../../components';
 import { colors } from '../../styles';
 
@@ -40,6 +40,7 @@ function Event() {
   ];
   return (
     <Block flex={1} color={colors.darkPurple}>
+      <StatusBar backgroundColor={colors.darkPurple} barStyle="light-content" />
       <Block
         flex={1}
         margin={[22, 0, 0, 0]}
