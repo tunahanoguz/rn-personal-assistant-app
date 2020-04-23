@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
-import { Block, Text, Message, Button, Input } from '../../components';
+import {
+  Block,
+  Text,
+  Message,
+  EventMessage,
+  Button,
+  Input,
+} from '../../components';
 import { colors } from '../../styles';
 import { messages } from '../../constants';
 
@@ -32,6 +39,11 @@ function Conversation() {
           const { id, text, isSent } = _message;
           return <Message key={id} text={text} isSent={isSent} />;
         })}
+
+        <EventMessage
+          title="Seattle PR Plan - L..."
+          description="Sep 2nd at 2:05PM"
+        />
       </Block>
 
       <Block

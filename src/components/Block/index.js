@@ -8,11 +8,13 @@ function Block(props) {
     flexDirection,
     justifyContent,
     alignItems,
+    align,
     width,
     height,
     color,
     margin,
     padding,
+    radius,
     style,
     children,
   } = props;
@@ -107,16 +109,60 @@ function Block(props) {
     }
   };
 
+  const handleRadius = () => {
+    if (typeof radius === 'number') {
+      return {
+        borderRadius: radius,
+      };
+    }
+
+    if (typeof radius === 'object') {
+      const radiusSize = Object.keys(radius).length;
+      switch (radiusSize) {
+        case 1:
+          return {
+            borderTopStartRadius: radius[0],
+            borderTopEndRadius: radius[0],
+            borderBottomStartRadius: radius[0],
+            borderBottomEndRadius: radius[0],
+          };
+        case 2:
+          return {
+            borderTopStartRadius: radius[0],
+            borderTopEndRadius: radius[0],
+            borderBottomStartRadius: radius[1],
+            borderBottomEndRadius: radius[1],
+          };
+        case 3:
+          return {
+            borderTopStartRadius: radius[0],
+            borderTopEndRadius: radius[0],
+            borderBottomStartRadius: radius[1],
+            borderBottomEndRadius: radius[2],
+          };
+        default:
+          return {
+            borderTopStartRadius: radius[0],
+            borderTopEndRadius: radius[1],
+            borderBottomStartRadius: radius[2],
+            borderBottomEndRadius: radius[3],
+          };
+      }
+    }
+  };
+
   const blockStyle = [
     flex && { flex },
     flexDirection && { flexDirection },
     justifyContent && { justifyContent },
     alignItems && { alignItems },
+    align && { alignSelf: align },
     width && { width },
     height && { height },
     color && { backgroundColor: color },
     margin && { ...handleMargins() },
     padding && { ...handlePaddings() },
+    radius && { ...handleRadius() },
     style,
   ];
 
@@ -128,11 +174,13 @@ Block.propTypes = {
   flexDirection: PropTypes.string,
   justifyContent: PropTypes.string,
   alignItems: PropTypes.string,
+  align: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,
   color: PropTypes.string,
   margin: PropTypes.array,
   padding: PropTypes.array,
+  radius: PropTypes.any,
   style: PropTypes.object,
 };
 
