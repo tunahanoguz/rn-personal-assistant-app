@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Image, StatusBar } from 'react-native';
 import { Block, Text, Button } from '../../components';
 import { colors } from '../../styles';
+import styles from './styles';
 
 function Introduction({ navigation }) {
   function goToConversation() {
@@ -21,14 +22,14 @@ function Introduction({ navigation }) {
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <Image
         source={require('../../assets/images/logo.png')}
-        style={{ alignSelf: 'center', marginBottom: 52 }}
+        style={styles.logo}
       />
 
       <Text color={colors.darkPurple} extraLarge boldWeight align="center">
         every.
       </Text>
 
-      <Text medium align="center" style={{ marginTop: 8, marginBottom: 88 }}>
+      <Text medium align="center" style={styles.description}>
         Your everyday personal assistant.
       </Text>
 
@@ -40,7 +41,7 @@ function Introduction({ navigation }) {
 
       <Button
         bgColor="white"
-        style={{ marginTop: 16, marginBottom: 30 }}
+        style={styles.signInButton}
         pressFunc={goToSignIn}>
         <Text color={colors.darkPurple} medium boldWeight>
           Login
