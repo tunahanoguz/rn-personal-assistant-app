@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
-import { Block, Button, Text } from '../../components';
+import { Block, Button, Input, Text } from '../../components';
 import { colors } from '../../styles';
-import Input from '../../components/Input';
+import styles from './styles';
 
 function SignIn() {
   const [email, setEmail] = useState('');
@@ -14,18 +14,18 @@ function SignIn() {
           Sign In
         </Text>
 
-        <Button bgColor="white" style={{ marginTop: 40 }}>
+        <Button bgColor="white" style={styles.appleButton}>
           <Image
             source={require('../../assets/icons/apple-icon.png')}
-            style={{ marginRight: 20 }}
+            style={styles.buttonIcon}
           />
           <Text boldWeight>Sign in with Apple</Text>
         </Button>
 
-        <Button bgColor="white" style={{ marginTop: 16, marginBottom: 40 }}>
+        <Button bgColor="white" style={styles.googleButton}>
           <Image
             source={require('../../assets/icons/google-icon.png')}
-            style={{ marginRight: 20 }}
+            style={styles.buttonIcon}
           />
           <Text boldWeight color={colors.blue}>
             Sign in with Google
@@ -47,17 +47,14 @@ function SignIn() {
           setValue={setEmail}
         />
 
-        <Button style={{ marginTop: 16 }}>
+        <Button style={styles.signUpLink}>
           <Text boldWeight color={colors.white}>
             Email me a signup link
           </Text>
         </Button>
       </Block>
 
-      <Block
-        flex={0.2}
-        justifyContent="center"
-        style={{ borderTopWidth: 1, borderColor: colors.lightGrey }}>
+      <Block flex={0.2} justifyContent="center" style={styles.termsContainer}>
         <Text extraSmall align="center">
           You are completely safe.
         </Text>
@@ -66,7 +63,7 @@ function SignIn() {
           boldWeight
           align="center"
           color={colors.darkPurple}
-          style={{ marginTop: 4 }}>
+          style={styles.termsText}>
           Read our Terms & Conditions.
         </Text>
       </Block>
