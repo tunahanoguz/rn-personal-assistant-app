@@ -10,6 +10,7 @@ import {
 } from '../../components';
 import { colors } from '../../styles';
 import { messages } from '../../constants';
+import styles from './styles';
 
 function Conversation() {
   const [message, setMessage] = useState('');
@@ -32,7 +33,7 @@ function Conversation() {
       <Block flex={0.8}>
         <Image
           source={require('../../assets/images/logo.png')}
-          style={{ width: 80, height: 80 }}
+          style={styles.logo}
         />
 
         {messages.map((_message) => {
@@ -46,15 +47,13 @@ function Conversation() {
         />
       </Block>
 
-      <Block
-        flex={0.2}
-        style={{ position: 'absolute', left: 24, right: 24, bottom: 24 }}>
+      <Block flex={0.2} style={styles.messageButtons}>
         <Block flexDirection="row" justifyContent="flex-end">
           <Button
             bgColor={messageInputColor}
             borderColor={messageInputBorderColor}
             isHorizontalPadding={true}
-            style={{ marginRight: 8 }}>
+            style={styles.messageButton}>
             <Text color={messageInputTextColor}>Flag</Text>
           </Button>
 
@@ -62,7 +61,7 @@ function Conversation() {
             bgColor={messageInputColor}
             borderColor={messageInputBorderColor}
             isHorizontalPadding={true}
-            style={{ marginRight: 8 }}>
+            style={styles.messageButton}>
             <Text color={messageInputTextColor}>Reply</Text>
           </Button>
 
@@ -86,14 +85,8 @@ function Conversation() {
           autoCorrect={false}
           setValue={setMessage}
           onFocus={onMessageInputFocus}
-          style={{ width: '80%' }}>
-          <Button
-            style={{
-              position: 'absolute',
-              top: 3.2,
-              right: 8,
-              paddingHorizontal: 18,
-            }}>
+          style={styles.input}>
+          <Button style={styles.sendButton}>
             <Image source={require('../../assets/icons/up-icon.png')} />
           </Button>
         </Input>
