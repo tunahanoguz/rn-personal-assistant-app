@@ -4,7 +4,7 @@ import { Block, Text } from '../../components';
 import { colors } from '../../styles';
 import AttendeeCard from '../../components/AttendeeCard';
 import DashedButton from '../../components/DashedButton';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from './styles';
 
 function Details() {
   const attendees = [
@@ -61,21 +61,13 @@ function Details() {
           <Block flexDirection="row" margin={[16, 0, 0]} padding={[0, 24]}>
             <Image
               source={require('../../assets/icons/left-icon.png')}
-              style={{ marginRight: 20 }}
+              style={styles.leftIcon}
             />
 
             <Text mediumWeight>Agenda: Weekly Product Meeting</Text>
           </Block>
 
-          <Block
-            margin={[20, 0]}
-            padding={[24]}
-            style={{
-              borderTopWidth: 1,
-              borderTopColor: colors.lightGrey,
-              borderBottomWidth: 1,
-              borderBottomColor: colors.lightGrey,
-            }}>
+          <Block margin={[20, 0]} padding={[24]} style={styles.titleTabArea}>
             <Text boldWeight lowerLarge>
               Details
             </Text>
@@ -88,21 +80,21 @@ function Details() {
                 uppercase
                 small
                 color={colors.darkGrey}
-                style={{ marginLeft: 24 }}>
+                style={styles.tabItem}>
                 TOPICS
               </Text>
               <Text
                 uppercase
                 small
                 color={colors.darkGrey}
-                style={{ marginLeft: 24 }}>
+                style={styles.tabItem}>
                 NOTIFICATIONS
               </Text>
               <Text
                 uppercase
                 small
                 color={colors.darkGrey}
-                style={{ marginLeft: 24 }}>
+                style={styles.tabItem}>
                 ASSETS
               </Text>
             </Block>
