@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, StatusBar } from 'react-native';
 import { Avatar, Block, Text, EventCard } from '../../components';
 import { colors } from '../../styles';
+import styles from './styles';
 
 function Event() {
   const events = [
@@ -82,7 +83,7 @@ function Event() {
           </Block>
 
           <Block margin={[0, 0, 24, 0]}>
-            <Text boldWeight lowerLarge style={{ marginBottom: 8 }}>
+            <Text boldWeight lowerLarge style={styles.firstTitle}>
               Weekly Design Crit
             </Text>
 
@@ -94,26 +95,26 @@ function Event() {
               boldWeight
               lowerLarge
               color={colors.darkPurple}
-              style={{ marginBottom: 24 }}>
+              style={styles.secondTitle}>
               Partecipants (4)
             </Text>
 
             <Block flexDirection="row">
               <Avatar
                 source={require('../../assets/images/avatar1.png')}
-                style={{ marginRight: 12 }}
+                style={styles.avatar}
               />
               <Avatar
                 source={require('../../assets/images/avatar2.png')}
-                style={{ marginRight: 12 }}
+                style={styles.avatar}
               />
               <Avatar
                 source={require('../../assets/images/avatar3.png')}
-                style={{ marginRight: 12 }}
+                style={styles.avatar}
               />
               <Avatar
                 source={require('../../assets/images/avatar4.png')}
-                style={{ marginRight: 12 }}
+                style={styles.avatar}
               />
             </Block>
           </Block>
